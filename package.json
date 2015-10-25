@@ -1,6 +1,6 @@
 {
-  "name": "code2music",
-  "version": "1.0.0",
+  "name": "code2mp3",
+  "version": "0.1.0",
   "description": "A library to convert your code to music",
   "main": "src/index.js",
   "scripts": {
