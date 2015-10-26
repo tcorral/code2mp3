@@ -8,7 +8,6 @@ addons:
     packages:
     - ffmpeg
 before_install:
-  - sh change_temp.sh
   - ffmpeg -version
   - npm install -g grunt-cli
 install: npm install
