@@ -7,18 +7,27 @@ set -e
 
 echo travis_fold:start:Dependencies
 sudo apt-get update
-sudo apt-get -y install wget tar bzip2 flvtool2
+sudo apt-get -y install wget tar bzip2 flvtool2 build-essential linux-headers-`uname -r` git yasm
 
-tar xf ./third-party/ffmpeg-release-64bit-static.tar.xz
+git clone git://source.ffmpeg.org/ffmpeg.git ffmpeg
+cd ffmpeg
+./configure
+make
+echo $?
+make install
 
-ls -la
-sudo cp ffmpeg-2.8.1-64bit-static/*.* /usr/bin
-sudo cp ffmpeg-2.8.1-64bit-static/*.* $(pwd)
+git clone git://git.videolan.org/x264.git x264
+cd x264
+./configure --enable-static --enable-shared
+make
+su -c 'make install'
 
-echo "ein1"
+cd ffmpeg
+make clean
 
-export ALT_FFMPEG_PATH=$(pwd)/ffmpeg
-export ALT_FFPROBE_PATH=$(pwd)/ffprobe
+./configure --enable-gpl --enable-nonfree --enable-pthreads --enable-libx264 --enable-libfaac --enable-libmp3lame --extra-cflags=-I/usr/local/include --extra-ldflags=-L/usr/local/lib
+su -c 'make install'
+
 echo travis_fold:end:Dependencies
 
 # Print versions
