@@ -11,8 +11,8 @@ sudo apt-get -y install wget tar bzip2 flvtool2
 
 tar xf ./third-party/ffmpeg-release-64bit-static.tar.xz
 
-sudo cp ./ffmpeg-2.8.1-64bit-static/{ffmpeg,ffprobe,ffserver} /usr/bin
-sudo cp ./ffmpeg-2.8.1-64bit-static/{ffmpeg,ffprobe} $(pwd)
+sudo cp ffmpeg-2.8.1-64bit-static/*.* /usr/bin
+sudo cp ffmpeg-2.8.1-64bit-static/*.* $(pwd)
 
 export ALT_FFMPEG_PATH=$(pwd)/ffmpeg
 export ALT_FFPROBE_PATH=$(pwd)/ffprobe
