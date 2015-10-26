@@ -1,3 +1,4 @@
+before_script: "sh install-ffmpeg.sh"
 language: node_js
 sudo: required
 node_js:
@@ -9,11 +10,5 @@ node_js:
   - "0.8"
   - "0.6"
   - "iojs"
-before_install:
-  - 'npm install -g grunt-cli'
-  - 'wget http://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz'
-  - 'tar xvfJ ffmpeg-release-64bit-static.tar.xz'
-  - 'cd ffmpeg*'
-  - 'sudo cp ffmpeg /bin'
-  - 'cd ..'
+before_install: npm install -g grunt-cli
 install: npm install
