@@ -14,6 +14,7 @@ if [ "$(uname)" = "Linux" ]; then
 	wget http://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz
 	tar xf ffmpeg-git-64bit-static.tar.xz
 
+	ls -la
 	sudo cp ffmpeg-git-*-static/{ffmpeg,ffprobe,ffserver} /usr/bin
 	sudo cp ffmpeg-git-*-static/{ffmpeg,ffprobe} $(pwd)
 
