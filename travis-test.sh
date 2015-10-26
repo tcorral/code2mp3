@@ -11,9 +11,10 @@ sudo apt-get -y install wget tar bzip2 flvtool2
 
 tar xf ./third-party/ffmpeg-release-64bit-static.tar.xz
 
-echo "ein"
+ls -la
 sudo cp ffmpeg-2.8.1-64bit-static/*.* /usr/bin
 sudo cp ffmpeg-2.8.1-64bit-static/*.* $(pwd)
+
 echo "ein1"
 
 export ALT_FFMPEG_PATH=$(pwd)/ffmpeg
