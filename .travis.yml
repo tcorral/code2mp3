@@ -1,10 +1,13 @@
 language: node_js
 os: linux
-sudo: required
+sudo: false
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - ffmpeg
 before_install:
-  - sudo -i
-  - apt-get update
-  - apt-get install ffmpeg
   - ffmpeg -version
   - npm install -g grunt-cli
 install: npm install
