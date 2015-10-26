@@ -4,5 +4,6 @@ matrix:
       env: NODE_VERSION=0.10
     - os: linux
       env: NODE_VERSION=0.12
+sudo: required
 script:
   - sh test-travis.sh
