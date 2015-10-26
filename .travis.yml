@@ -1,9 +1,8 @@
-matrix:
-  include:
-    - os: linux
-      env: NODE_VERSION=0.10
-    - os: linux
-      env: NODE_VERSION=0.12
+language: node_js
+node_js:
+  - "0.10"
+  - "0.11"
+  - "0.12"
 sudo: required
 script:
-  - sh test-travis.sh
+  - sh travis-test.sh
