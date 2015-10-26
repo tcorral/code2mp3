@@ -4,5 +4,7 @@ node_js:
   - "0.11"
   - "0.12"
 sudo: required
-script:
+before_install:
+  - npm install -g grunt-cli
   - sh travis-test.sh
+install: npm install
