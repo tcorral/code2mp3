@@ -6,7 +6,7 @@ var clips = [];
 module.exports = function (codeFilePath, songPath, callback) {
   var data = fs.readFileSync(codeFilePath, 'utf8');
   var chars = data.replace(/\r/g, '').replace(/\n/g, '').split('');
-  var opts = { output: songPath, gap: -2, export: 'mp3'};
+  var opts = { output: songPath, gap: -2, export: 'mp3' };
   chars.forEach(function (char){
     var file;
     var _path;
