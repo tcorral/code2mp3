@@ -1,5 +1,5 @@
 language: node_js
 os: osx
-  env: NODE_VERSION=0.10
+env: NODE_VERSION=0.10
 sudo: required
 script: travis-test.sh
